@@ -1,0 +1,334 @@
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+}
+main ._menu {
+  width: 20%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+main ._menu li {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 25px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+main ._menu li > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main ._menu li i {
+  width: 30%;
+  justify-content: end;
+}
+main ._menu li span {
+  width: 70%;
+}
+main ._menu li:hover {
+  background-color: #bebebe;
+  color: aliceblue;
+}
+main ._menu figure {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main ._menu figure img {
+  width: 100%;
+  height: 100%;
+  -webkit-user-drag: none;
+}
+main .txt {
+  position: absolute;
+  left: 20%;
+  width: 80%;
+  min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url(img/paper.jpg);
+  background-size: cover;
+  background-position: 20% 20%;
+}
+main .txt::after {
+  content: "";
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+main .txt #add {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(135deg, rgba(56, 190, 56, 0.7529411765), rgba(102, 102, 176, 0.8392156863));
+  font-size: 50px;
+  color: aliceblue;
+  position: fixed;
+  bottom: 50px;
+  right: 80px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 22;
+}
+main .txt h1 {
+  font-size: 2rem;
+  color: #bebebe;
+  position: fixed;
+  top: 2%;
+  right: -5%;
+  transform: translate(-50%, 0);
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: 1px solid red;
+}
+
+.note {
+  width: 400px;
+  height: 0px;
+  overflow: hidden;
+  background-image: linear-gradient(135deg, #38be38, #6666b0);
+  display: flex;
+  justify-content: center;
+  align-content: space-evenly;
+  flex-wrap: wrap;
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2980392157);
+}
+.note .title {
+  width: 90%;
+  height: 45px;
+  padding-left: 10px;
+}
+.note .note-text {
+  width: 90%;
+  height: 200px;
+  resize: none;
+  padding: 10px;
+}
+.note .btn {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+}
+.note .btn i {
+  font-size: 30px;
+  padding-right: 5px;
+  cursor: pointer;
+}
+.note .btn span {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+}
+.note .btn #check {
+  color: aliceblue;
+}
+.note .btn #x {
+  color: red;
+}
+
+.paper {
+  width: 250px;
+  height: 250px;
+  background-image: linear-gradient(135deg, #38be38, #6666b0);
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 5px;
+  box-shadow: 0px 0px 10px rgba(190, 190, 190, 0.6352941176);
+  z-index: 22;
+}
+.paper > p, .paper h2 {
+  width: 90%;
+  border-bottom: 1px solid #bebebe;
+  display: flex;
+}
+.paper h2 {
+  align-items: center;
+  justify-content: space-evenly;
+}
+.paper h2 input {
+  width: 90%;
+  height: 80%;
+  padding-left: 10px;
+  outline: none;
+}
+.paper > p {
+  height: 60%;
+  padding-top: 5px;
+}
+.paper > p textarea {
+  padding: 10px;
+}
+.paper i {
+  cursor: pointer;
+  font-size: 20px;
+  margin-right: 5px;
+  transition: 0.4s;
+  color: white;
+}
+.paper i:hover {
+  color: red;
+}
+
+#setting {
+  display: flex;
+  flex-wrap: wrap;
+  cursor: default;
+}
+#setting > * {
+  width: 100%;
+}
+#setting .select {
+  cursor: pointer;
+  text-align: center;
+}
+#setting .select i {
+  display: flex;
+  justify-content: end;
+}
+#setting .darkmode {
+  cursor: pointer;
+  height: 0px;
+  overflow: hidden;
+  transition: 0.4s;
+}
+#setting .darkmode > span {
+  width: 100px;
+  height: 45px;
+  background-color: #818080;
+  border-radius: 40px;
+  margin: 0 5px;
+}
+#setting .darkmode > span > span {
+  display: flex;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  transition: 0.4s;
+}
+
+.light {
+  background-color: #f4ebeb;
+  box-shadow: 0 0 10px #dbd6d6;
+  transform: translateX(0px);
+}
+
+.dark {
+  background-color: #222222;
+  box-shadow: 0 0 10px #161616;
+  transform: translateX(55px);
+}
+
+.reminder {
+  width: 200px;
+  height: 0px;
+  overflow: hidden;
+  background-color: #bebebe;
+  position: absolute;
+  border-radius: 5px;
+  top: 50%;
+  left: 1%;
+  display: flex;
+  flex-wrap: wrap;
+  transform: translate(-1%, -50%);
+  z-index: 999;
+}
+.reminder #close:hover {
+  color: red;
+}
+.reminder input {
+  padding: 5px;
+  border: none;
+  margin-right: 5px;
+  height: 35px;
+}
+.reminder > * {
+  margin-bottom: 5px;
+}
+.reminder .time {
+  display: flex;
+}
+.reminder .time > * {
+  width: 80px;
+}
+.reminder #set, .reminder i {
+  cursor: pointer;
+}
+.reminder #set {
+  width: 100px;
+  cursor: pointer;
+}
+
+.remind {
+  border-top: 1px solid rgb(37, 37, 37);
+}
+.remind i {
+  color: rgb(37, 37, 37);
+  padding-right: 10px;
+}
+
+#alarm {
+  position: absolute;
+  top: 50px;
+  z-index: 2000;
+  display: none;
+}
+
+.follow a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.follow a > * {
+  display: flex;
+  justify-content: center;
+}
+.follow a i {
+  justify-content: end;
+}/*# sourceMappingURL=master.css.map */

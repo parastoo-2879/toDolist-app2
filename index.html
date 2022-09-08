@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <title>ToDoList</title>
+  <link rel="stylesheet" href="master.css">
+</head>
+
+<body>
+  <main>
+    <section class="_menu">
+      <div class="logo">
+        <figure>
+          <img src="img/logoo-removebg-preview.png" alt="">
+        </figure>
+      </div>
+      <nav class="menu">
+        <ul>
+          <li><i class="bi bi-journals"></i><span> Notes</span></li>
+          <li id="reminder"><i class="bi bi-alarm"></i><span>Reminder</span></li>
+          <li id="setting">
+            <div class="select"><i class="bi bi-gear"></i> <span>Setting</span></div>
+            <div class="darkmode">light<span><span id="dbtn" class="light"></span></span>dark</div>
+          </li>
+          <li class="follow"><a href="https://www.linkedin.com/in/zahra-ghanbarzade-255005213"><i
+                class="bi bi-linkedin"></i>
+              <span>Follow us</span></a> </li>
+        </ul>
+      </nav>
+    </section>
+    <div class="txt">
+      <!-- add -->
+      <div id="add">+</div>
+      <!-- reminder -->
+      <div class="reminder">
+        <i class="bi bi-x-circle" id="close"></i>
+        <input type="text" placeholder="title" id="title">
+        <div class="time">
+          <input type="number" placeholder="hours" min="0" max="23" id="hours">
+          <input type="number" placeholder="minutes" min="0" max="59" id="min">
+        </div>
+        <button id="set">Set</button>
+      </div>
+      <!-- note -->
+      <div class="note">
+        <div class="btn">
+          <span>NOTE</span>
+          <i class="bi bi-journal-check" id="check"></i>
+          <i class="bi bi-journal-x" id="x"></i>
+        </div>
+        <input placeholder="title" class="title">
+        <textarea placeholder="text" class="note-text"></textarea>
+      </div>
+      <audio id="alarm" controls>
+        <source src="audio/Clock Alarm.mp3">
+      </audio>
+    </div>
+  </main>
+</body>
+
+</html>
+<script src="app.js"></script>
