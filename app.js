@@ -41,6 +41,7 @@ document.getElementById("check").addEventListener("click", () => {
     // remove task
 
     item.querySelector("#omit").addEventListener("click", () => {
+      // دقیقا اینجا الرت به تعداد شماره ایندکس نشان داده میشه ! چرا؟
       // alert("are u sure?")
       _child[index].remove()
       console.log(document.querySelectorAll(".txt>.paper").length)
@@ -161,22 +162,23 @@ function _check(x, y) {
     if (x == h && y > m) {
       diffm = y - m
       console.log(x, "__", y, "__", diffm)
-      _remind(diffh, diffm)
+      // _remind(diffh, diffm)
     } else if (x > h && y == m) {
       diffh = x - h
       console.log(x, "__", y, "__", diffh)
-      _remind(diffh, diffm)
+      // _remind(diffh, diffm)
     } else if (x > h && y < m) {
       diffh = x - h
       diffm = m - y
       diffm = (diffh * 60) - diffm
       console.log(x, "__", y, "__", diffm)
-      _remind(diffh, diffm)
+      // _remind(diffh, diffm)
     } else if (h > x && (m == y || m > y || y > m)) {
       alert("it's late")
     } else {
       alert("it's late")
     }
+    _remind(diffh, diffm)
   }
 
   function _remind(diffh, diffm) {
